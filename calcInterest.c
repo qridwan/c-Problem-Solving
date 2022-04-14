@@ -2,6 +2,7 @@
 /*
 Write a C program to input principle, time and rate (P, T, R) from the user and find Simple Interest and principal plus interest.
 Example
+
 Input
 Enter principle: 1200
 Enter time: 2
