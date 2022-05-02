@@ -25,29 +25,46 @@ int main()
     scanf("%d %d %d %d %d %d %d", &A, &B, &C, &D, &E, &F, &X);
 
     // takahashi
-    int tRemainSec = 0;
-    if (X > A + C)
+    int tFullRun = X / (A + C);
+    int tLeft = X % (A + C);
+    int tDistance = 0;
+
+    for (int i = 1; i <= tFullRun; i++)
     {
-        tRemainSec = X - (A + C);
+        tDistance += A * B;
     }
-
-    int tTotalDistance = (tRemainSec + A) * B;
-
-    // Aoki;
-    int aRemainSec = 0;
-    if (D + F < X)
+    if (tLeft >= A)
     {
-        aRemainSec = X - (D + F);
+        tDistance += A * B;
     }
+    else if (tLeft < A)
+    {
+        tDistance += tLeft * B;
+    }
+    // printf("tFullRun= %d Left= %d tDistance= %d\n", tFullRun, tLeft, tDistance);
 
-    int aTotalDistance = (aRemainSec + D) * E;
+    int aFullRun = X / (D + F);
+    int aLeft = X % (D + F);
+    int aDistance = 0;
 
-    printf("T=%d: A=%d\n", tTotalDistance, aTotalDistance);
-    if (tTotalDistance > aTotalDistance)
+    for (int i = 1; i <= aFullRun; i++)
+    {
+        aDistance += D * E;
+    }
+    if (aLeft >= D)
+    {
+        aDistance += D * E;
+    }
+    else if (aLeft < D)
+    {
+        aDistance += aLeft * E;
+    }
+    // printf("aFullRun= %d Left= %d aDistance= %d\n", aFullRun, aLeft, aDistance);
+    if (tDistance > aDistance)
     {
         printf("Takahashi\n");
     }
-    else if (tTotalDistance == aTotalDistance)
+    else if (tDistance == aDistance)
     {
         printf("Draw\n");
     }
@@ -61,16 +78,20 @@ int main()
 
 /*
 Rough
-Takahashi B ms for A sec, Rest C sec
-Aoki E ms for D sec, Rest F sec
-3 m
-5 m
+4 2 3 20;
 
-taka;
- remainSec = X - (A+C)
- total dis for taka = (remainSec + A) * B
+4 3 4 3 ==> 14 , left 6 sec
 
-Aoki;
- remainSec = X - (D+F)
- dis = (remainSec + D) * E
+total fullLoop = 20/4+3 times; //2 times
+distance = 0
+for(int i =1; i<= fullLoop*2; i++){
+ if(i%2 == 0) continue
+else{
+distance += 4*2;
+}
+}
+
+0 == 0 ==> 0
+3 == 3, 0 ==> 3*2;
+6 ==> 4, 2 == 4*2;
 */
