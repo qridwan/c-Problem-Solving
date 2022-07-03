@@ -1,0 +1,7 @@
+6
+shoyab 102 22
+ridwan 103 90
+shoyab 102 88
+rakin 104 91
+akil 101 82
+ridwan 103 90

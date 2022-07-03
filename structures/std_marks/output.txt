@@ -1,0 +1,4 @@
+name=ridwan roll=103  total=180
+name=shoyab roll=102  total=110
+name=rakin roll=104  total=91
+name=akil roll=101  total=82
