@@ -13,9 +13,9 @@ void reverse(int *a, int n)
 }
 int main()
 {
-    int arr[] = {5, 6, 7, 8, 9};
-    reverse(arr, 5);
-    for (int i = 0; i < 5; i++)
+    int arr[] = {5, 6, 7, 8};
+    reverse(arr, 4);
+    for (int i = 0; i < 4; i++)
     {
         printf("%d ", arr[i]);
     }

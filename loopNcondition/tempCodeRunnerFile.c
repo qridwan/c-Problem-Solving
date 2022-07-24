@@ -1,18 +1,4 @@
-#include <stdio.h>
-
-int main()
-{
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
-
-    if (c > a && c < b)
+for (int i = 0; i < len; i++)
     {
-        printf("Yes\n");
+        printf("%c", str[i]);
     }
-    else
-    {
-        printf("No\n");
-    }
-
-    return 0;
-}
